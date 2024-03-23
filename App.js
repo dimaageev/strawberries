@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from "react-native";
+import Strawberries from "./Strawberries";
+
+const { width, height } = Dimensions.get("window");
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.bg} />
+      <Strawberries />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width,
+    height,
+    overflow: "hidden",
+  },
+  bg: {
+    width,
+    height,
+    backgroundColor: "#fbc531",
   },
 });
